@@ -28,6 +28,6 @@ Before pushing changes, check the code.
 
 ## Releasing
 
-To generate a release, with a compiled and signed application complete with a ZIP and DMG version.
+To generate a signed release with a ZIP and DMG version.
 
     gulp release

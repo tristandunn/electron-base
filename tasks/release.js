@@ -1,4 +1,4 @@
-/* global __dirname */
+/* global __dirname,process */
 
 import gulp from "gulp";
 import packager from "electron-packager";
@@ -24,11 +24,12 @@ gulp.task("package", (callback) => {
 });
 
 gulp.task("release", (callback) => {
+  process.env.NODE_ENV = "production";
+
   return sequence.use(gulp)(
     "clean",
     "copy",
-    "install",
-    ["javascript", "stylesheet"],
+    ["install", "javascript"],
     "package",
     "sign",
     ["zip", "damage"],

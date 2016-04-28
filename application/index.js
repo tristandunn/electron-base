@@ -11,18 +11,6 @@ Application.on("ready", () => {
     "height" : 600
   });
 
-  try {
-    require("browser-sync")
-      .create()
-      .watch(`${__dirname}/**/*`, (event, file) => {
-        if (event === "change" && file.match(/(.css|.html|.js)$/g)) {
-          BrowserWindow.getAllWindows().forEach((window) => {
-            window.webContents.reloadIgnoringCache();
-          });
-        }
-      });
-  } catch(exception) {}
-
   window.on("closed", () => {
     window = null;
   });

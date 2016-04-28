@@ -1,8 +1,6 @@
-/* global __dirname */
-
 import gulp from "gulp";
-import shell from "gulp-shell";
 import eslint from "gulp-eslint";
+import sasslint from "gulp-sass-lint";
 import sequence from "run-sequence";
 
 const sources = [
@@ -18,10 +16,9 @@ gulp.task("lint:javascript", () => {
 });
 
 gulp.task("lint:stylesheets", () => {
-  return gulp.src("", { read: false })
-    .pipe(shell(`scss-lint --config ${__dirname}/../.scss-lint.yml --color`, {
-      ignoreErrors : true
-    }));
+  return gulp.src("application/js/**/*.css")
+    .pipe(sasslint())
+    .pipe(sasslint.format());
 });
 
 gulp.task("lint", (callback) => {

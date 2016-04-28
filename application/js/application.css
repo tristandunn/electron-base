@@ -1,0 +1,5 @@
+body {
+  font: 16px/1 "Avenir";
+  text-rendering: optimizeLegibility;
+  -webkit-user-select: none;
+}

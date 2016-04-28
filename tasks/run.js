@@ -17,7 +17,7 @@ gulp.task("run", () => {
     "clean",
     "copy",
     "install",
-    ["javascript", "stylesheet"],
+    "javascript",
     "electron"
   );
 });

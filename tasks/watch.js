@@ -1,18 +1,16 @@
+/* global process */
+
 import gulp from "gulp";
-import synchronize from "browser-sync";
+import sequence from "run-sequence";
 
-gulp.task("watch", ["run"], () => {
-  let browser = synchronize.create();
+gulp.task("watch", () => {
+  process.env.ELECTRON_ENV = "local";
 
-  browser
-    .watch("application/css/**/*")
-    .on("change", () => {
-      gulp.start(["stylesheet"]);
-    });
-
-  browser
-    .watch("application/**/*.{js,jsx}")
-    .on("change", () => {
-      gulp.start(["javascript"]);
-    });
+  return sequence.use(gulp)(
+    "clean",
+    "copy",
+    "install",
+    "javascript:watch",
+    "electron"
+  );
 });
