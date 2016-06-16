@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+
+import File from "fs";
+import packageJSON from "../package";
+
+const KEYS = ["author", "dependencies", "description", "main", "name", "version"],
+      DATA = KEYS.reduce((object, key) => {
+        return Object.assign(object, { [key]: packageJSON[key] });
+      }, {});
+
+try {
+  File.mkdirSync("./build");
+} catch (error) {
+  if (error.code !== "EEXIST") {
+    throw error;
+  }
+}
+
+File.writeFileSync("./build/icon.icns",    File.readFileSync("./application/images/icon.icns"));
+File.writeFileSync("./build/index.html",   File.readFileSync("./application/index.html"));
+File.writeFileSync("./build/package.json", JSON.stringify(DATA));
