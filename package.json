@@ -65,8 +65,7 @@
   "build" : {
     "appId" : "com.yourname.electronbase",
     "mac"   : {
-      "identity" : "Your Identiy Name",
-      "target"   : ["dmg", "zip"]
+      "identity" : "Your Identiy Name"
     }
   },
   "directories" : {
