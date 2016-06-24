@@ -28,7 +28,7 @@ To generate a signed release with a ZIP and DMG version.
 
     npm run package
 
-Be sure to correct the identify name in `package.json` for signing.
+Be sure to correct the identity name in `package.json` for signing.
 
 ## License
 
