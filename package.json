@@ -64,7 +64,6 @@
   },
   "build" : {
     "appId" : "com.yourname.electronbase",
-    "asar"  : false,
     "osx"   : {
       "identity" : "Your Identiy Name",
       "target"   : ["dmg", "zip"]
