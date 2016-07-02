@@ -64,6 +64,7 @@
   },
   "build" : {
     "appId" : "com.yourname.electronbase",
+    "icon"  : "build/images/icon",
     "mac"   : {
       "identity" : "Your Identiy Name"
     }
