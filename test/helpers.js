@@ -6,6 +6,6 @@ import { expect } from "chai";
 import { shallow } from "enzyme";
 
 global.React   = React;
-global.sinon   = sinon;
+global.sinon   = sinon.sandbox.create();
 global.expect  = expect;
 global.shallow = shallow;
