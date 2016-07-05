@@ -1,20 +1,21 @@
 /* global __dirname */
 
+import Path from "path";
 import Webpack from "webpack";
-import BaseConfiguration from "./webpack.config.base";
+import BaseConfiguration from "./webpack.base";
 
 export default {
   ...BaseConfiguration,
 
   devtool : "hidden",
-  entry   : "./application/main",
+  entry   : Path.resolve(`${__dirname}/../application/main`),
   target  : "electron-main",
 
   output : {
     ...BaseConfiguration.output,
 
     path     : __dirname,
-    filename : "./build/index.js"
+    filename : "../build/index.js"
   },
 
   plugins : [

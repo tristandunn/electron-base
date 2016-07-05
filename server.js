@@ -2,7 +2,7 @@
 
 import Express from "express";
 import Webpack from "webpack";
-import Configuration from "./webpack.config.development";
+import Configuration from "./configuration/webpack.development";
 import HotMiddleware from "webpack-hot-middleware";
 import DevelopmentMiddleware from "webpack-dev-middleware";
 

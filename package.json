@@ -7,8 +7,8 @@
   "description" : "A base for Electron applications with React.",
   "scripts"     : {
     "build"          : "npm run build-main && npm run build-renderer",
-    "build-main"     : "NODE_ENV=production npm run webpack -- --config webpack.config.electron",
-    "build-renderer" : "NODE_ENV=production npm run webpack -- --config webpack.config.production",
+    "build-main"     : "NODE_ENV=production npm run webpack -- --config ./configuration/webpack.electron",
+    "build-renderer" : "NODE_ENV=production npm run webpack -- --config ./configuration/webpack.production",
     "hot"            : "concurrently --kill-others \"npm run hot-server\" \"npm run hot-start\"",
     "hot-server"     : "node -r babel-register server.js",
     "hot-start"      : "HOT=1 NODE_ENV=development electron -r babel-register ./application/main",

@@ -1,5 +1,5 @@
 import Webpack from "webpack";
-import BaseConfiguration from "./webpack.config.base";
+import BaseConfiguration from "./webpack.base";
 import ExtractTextPlugin from "extract-text-webpack-plugin";
 
 export default {
