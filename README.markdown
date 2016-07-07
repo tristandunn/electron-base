@@ -12,7 +12,7 @@ Install the dependencies.
 
 To run the application, and reload the renderer code when changed.
 
-    npm run hot
+    npm start
 
 If you're making changes, be sure to write and run the tests.
 
