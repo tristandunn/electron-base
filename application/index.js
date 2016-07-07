@@ -1,31 +1,44 @@
-/* global module,process,require */
+/* global __dirname,process,require */
 
-import React from "react";
-import ReactDOM from "react-dom";
+const Electron      = require("electron"),
+      Application   = Electron.app,
+      BrowserWindow = Electron.BrowserWindow;
 
-let Container;
+let window = null;
 
 if (process.env.NODE_ENV === "development") {
-  Container = require("react-hot-loader").AppContainer;
-} else {
-  Container = (props) => {
-    return React.Children.only(props.children);
-  };
+  require("electron-debug")();
 }
 
-const render = () => {
-  const Application = require("./application").default;
+Application.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
+    Application.quit();
+  }
+});
 
-  ReactDOM.render(
-    <Container>
-      <Application />
-    </Container>,
-    document.getElementById("root")
-  );
-};
+Application.on("ready", () => {
+  window = new BrowserWindow({
+    "show"       : process.env.NODE_ENV === "development",
+    "width"      : 896,
+    "height"     : 512,
+    "resizable"  : false,
+    "fullscreen" : false
+  });
 
-if (module.hot) {
-  module.hot.accept("./application", render);
-}
+  if (process.env.NODE_ENV !== "development") {
+    window.webContents.on("did-finish-load", () => {
+      window.show();
+      window.focus();
+    });
+  }
 
-render();
+  window.on("closed", () => {
+    window = null;
+  });
+
+  if (process.env.NODE_ENV === "development") {
+    window.loadURL(`file://${__dirname}/../browser/index.html`);
+  } else {
+    window.loadURL(`file://${__dirname}/index.html`);
+  }
+});

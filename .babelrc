@@ -6,7 +6,7 @@
     },
     "test": {
       "plugins": [
-        ["resolver", { "resolveDirs": ["application"] }],
+        ["resolver", { "resolveDirs": ["browser"] }],
         ["webpack-loaders", { "config": "./configuration/webpack.node.js", "verbose": false }]
       ]
     }

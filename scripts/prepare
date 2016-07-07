@@ -19,6 +19,6 @@ try {
 File.removeSync("./build");
 File.removeSync("./release");
 
-File.copySync("./application/images", "./build/images");
-File.writeFileSync("./build/index.html", File.readFileSync("./application/index.html"));
+File.copySync("./browser/images", "./build/images");
+File.writeFileSync("./build/index.html", File.readFileSync("./browser/index.html"));
 File.writeFileSync("./build/package.json", JSON.stringify(DATA));

@@ -8,7 +8,7 @@ export default {
   ...BaseConfiguration,
 
   devtool : "hidden",
-  entry   : Path.resolve(`${__dirname}/../application/main`),
+  entry   : Path.resolve(`${__dirname}/../application/index`),
   target  : "electron-main",
 
   output : {

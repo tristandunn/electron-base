@@ -11,7 +11,7 @@ export default {
   entry : [
     "react-hot-loader/patch",
     "webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr",
-    "./application/index"
+    "./browser/index"
   ],
 
   module : {

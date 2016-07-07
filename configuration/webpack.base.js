@@ -17,6 +17,6 @@ export default {
   },
   resolve : {
     extensions         : ["", ".js", ".jsx"],
-    modulesDirectories : ["node_modules", "application"]
+    modulesDirectories : ["node_modules", "browser"]
   }
 };

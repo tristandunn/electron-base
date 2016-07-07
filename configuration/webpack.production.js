@@ -6,7 +6,7 @@ export default {
   ...BaseConfiguration,
 
   devtool : "hidden",
-  entry   : "./application/index",
+  entry   : "./browser/index",
   target  : "electron-renderer",
 
   module : {
