@@ -40,16 +40,16 @@
     "concurrently"                 : "3.1.0",
     "css-loader"                   : "0.25.0",
     "devtron"                      : "1.4.0",
-    "electron"                     : "1.4.4",
+    "electron"                     : "1.4.5",
     "electron-builder"             : "7.15.2",
     "electron-debug"               : "1.0.1",
     "electron-mocha"               : "3.1.1",
     "enzyme"                       : "2.5.1",
-    "eslint"                       : "3.9.0",
-    "eslint-plugin-react"          : "6.4.1",
+    "eslint"                       : "3.9.1",
+    "eslint-plugin-react"          : "6.5.0",
     "express"                      : "4.14.0",
     "extract-text-webpack-plugin"  : "1.0.1",
-    "fs-extra"                     : "0.30.0",
+    "fs-extra"                     : "1.0.0",
     "mocha"                        : "3.1.2",
     "node-sass"                    : "3.10.1",
     "react-addons-test-utils"      : "15.3.2",
@@ -66,7 +66,7 @@
     "appId" : "com.yourname.electronbase",
     "mac"   : {
       "icon"     : "build/images/icon.icns",
-      "identity" : "Your Identiy Name"
+      "identity" : "Tristan Dunn"
     }
   },
   "directories" : {
