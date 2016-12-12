@@ -66,7 +66,7 @@
     "appId" : "com.yourname.electronbase",
     "mac"   : {
       "icon"     : "build/images/icon.icns",
-      "identity" : "Tristan Dunn"
+      "identity" : "Your Identity Name"
     }
   },
   "directories" : {
