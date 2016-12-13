@@ -8,14 +8,6 @@ const KEYS = ["author", "dependencies", "description", "main", "name", "version"
         return Object.assign(object, { [key]: packageJSON[key] });
       }, {});
 
-try {
-  File.mkdirSync("./build");
-} catch (error) {
-  if (error.code !== "EEXIST") {
-    throw error;
-  }
-}
-
 File.removeSync("./build");
 File.removeSync("./release");
 
