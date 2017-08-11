@@ -16,9 +16,9 @@ module.exports = {
       {
         test    : /\.scss$/,
         loaders : [
-          "style",
-          "css?camelCase&modules",
-          "sass"
+          "style-loader",
+          "css-loader?camelCase&modules",
+          "sass-loader"
         ]
       }
     ]

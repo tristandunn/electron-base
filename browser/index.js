@@ -1,25 +1,22 @@
-/* global module,process,require */
+/* global module,require */
 
 import React from "react";
 import ReactDOM from "react-dom";
+import HotContainer from "containers/hot";
+import configureStore from "./store";
+import { createBrowserHistory } from "history";
+import { syncHistoryWithStore } from "react-router-redux";
 
-let Container;
-
-if (process.env.NODE_ENV === "development") {
-  Container = require("react-hot-loader").AppContainer;
-} else {
-  Container = (props) => {
-    return React.Children.only(props.children);
-  };
-}
+const store   = configureStore(),
+      history = syncHistoryWithStore(createBrowserHistory(), store);
 
 const render = () => {
   const Application = require("./application").default;
 
   ReactDOM.render(
-    <Container>
-      <Application />
-    </Container>,
+    <HotContainer>
+      <Application history={history} store={store} />
+    </HotContainer>,
     document.getElementById("root")
   );
 };

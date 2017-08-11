@@ -4,7 +4,6 @@ import BaseConfiguration from "./webpack.base";
 export default {
   ...BaseConfiguration,
 
-  debug   : true,
   devtool : "source-map",
   target  : "electron-renderer",
 
@@ -23,9 +22,9 @@ export default {
       {
         test    : /\.scss$/,
         loaders : [
-          "style",
-          "css?camelCase&modules&sourceMap",
-          "sass?sourceMap"
+          "style-loader",
+          "css-loader?camelCase&modules&sourceMap",
+          "sass-loader?sourceMap"
         ]
       }
     ]
@@ -38,8 +37,11 @@ export default {
   },
 
   plugins : [
+    new Webpack.LoaderOptionsPlugin({
+      debug: true
+    }),
     new Webpack.HotModuleReplacementPlugin(),
-    new Webpack.NoErrorsPlugin(),
+    new Webpack.NoEmitOnErrorsPlugin(),
     new Webpack.DefinePlugin({
       __DEV__       : true,
       "process.env" : {

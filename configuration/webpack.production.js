@@ -17,7 +17,11 @@ export default {
 
       {
         test    : /\.scss$/,
-        loaders : ["style", "css?camelCase&modules", "sass"]
+        loaders : [
+          "style-loader",
+          "css-loader?camelCase&modules",
+          "sass-loader"
+        ]
       }
     ]
   },
@@ -29,7 +33,6 @@ export default {
   },
 
   plugins : [
-    new Webpack.optimize.OccurenceOrderPlugin(),
     new Webpack.DefinePlugin({
       __DEV__       : false,
       "process.env" : {

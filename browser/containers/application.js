@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 class ApplicationContainer extends React.Component {
   render() {
@@ -11,7 +12,7 @@ class ApplicationContainer extends React.Component {
 }
 
 ApplicationContainer.propTypes = {
-  children : React.PropTypes.element.isRequired
+  children : PropTypes.element.isRequired
 };
 
 export default ApplicationContainer;

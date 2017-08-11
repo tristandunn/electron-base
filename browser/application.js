@@ -1,21 +1,24 @@
 import React from "react";
 import routes from "./routes";
+import PropTypes from "prop-types";
+import { Router } from "react-router";
 import { Provider } from "react-redux";
-import configureStore from "./store";
-import { Router, hashHistory } from "react-router";
-import { syncHistoryWithStore } from "react-router-redux";
-
-const store   = configureStore(),
-      history = syncHistoryWithStore(hashHistory, store);
 
 class Application extends React.Component {
   render() {
     return (
-      <Provider store={store}>
-        <Router history={history} routes={routes} />
+      <Provider store={this.props.store}>
+        <Router history={this.props.history}>
+          {routes}
+        </Router>
       </Provider>
     );
   }
 }
+
+Application.propTypes = {
+  history : PropTypes.object.isRequired,
+  store   : PropTypes.object.isRequired
+};
 
 export default Application;

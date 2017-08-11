@@ -5,7 +5,7 @@ export default {
     loaders : [
       {
         test    : /\.jsx?$/,
-        loaders : ["babel"],
+        loaders : ["babel-loader"],
         exclude : /node_modules/
       }
     ]
@@ -16,7 +16,7 @@ export default {
     libraryTarget : "commonjs2"
   },
   resolve : {
-    extensions         : ["", ".js", ".jsx"],
-    modulesDirectories : ["node_modules", "browser"]
+    modules    : ["node_modules", "browser"],
+    extensions : [".js", ".jsx"]
   }
 };
