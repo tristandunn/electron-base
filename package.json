@@ -15,7 +15,7 @@
     "start": "concurrently --kill-others \"yarn run start-server\" \"yarn run start-hot\"",
     "start-server": "node -r babel-register server.js",
     "start-hot": "HOT=1 NODE_ENV=development electron -r babel-register ./application/index",
-    "test": "yarn run test-renderer -s",
+    "test": "yarn run test-renderer",
     "test-renderer": "NODE_ENV=test electron-mocha --renderer test/**/*.spec.js",
     "webpack": "node -r babel-register ./node_modules/webpack/bin/webpack --progress --profile --colors"
   },
