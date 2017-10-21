@@ -20,13 +20,13 @@ If you're making changes, be sure to write and run the tests.
 
 Before pushing changes, check the code.
 
-    yarn run lint
+    yarn lint
 
 ## Releasing
 
 To generate a signed release with a ZIP and DMG version.
 
-    yarn run package
+    yarn package
 
 Be sure to correct the identity name in `package.json` for signing.
 
