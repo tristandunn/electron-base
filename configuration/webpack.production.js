@@ -7,17 +7,18 @@ export default {
 
   devtool : "hidden",
   entry   : "./browser/index",
+  mode    : "production",
   target  : "electron-renderer",
 
   module : {
     ...BaseConfiguration.module,
 
-    loaders : [
-      ...BaseConfiguration.module.loaders,
+    rules : [
+      ...BaseConfiguration.module.rules,
 
       {
-        test    : /\.scss$/,
-        loaders : [
+        test : /\.scss$/,
+        use  : [
           "style-loader",
           "css-loader?camelCase&modules",
           "sass-loader"

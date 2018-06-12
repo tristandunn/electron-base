@@ -16,15 +16,27 @@ export default {
   module : {
     ...BaseConfiguration.module,
 
-    loaders : [
-      ...BaseConfiguration.module.loaders,
+    rules : [
+      ...BaseConfiguration.module.rules,
 
       {
-        test    : /\.scss$/,
-        loaders : [
-          "style-loader",
-          "css-loader?camelCase&modules&sourceMap",
-          "sass-loader?sourceMap"
+        test : /\.scss$/,
+        use  : [
+          { loader: "style-loader" },
+          {
+            loader  : "css-loader",
+            options : {
+              camelCase : true,
+              modules   : true,
+              sourceMap : true
+            }
+          },
+          {
+            loader  : "sass-loader",
+            options : {
+              sourceMap : true
+            }
+          }
         ]
       }
     ]
@@ -37,9 +49,6 @@ export default {
   },
 
   plugins : [
-    new Webpack.LoaderOptionsPlugin({
-      debug: true
-    }),
     new Webpack.HotModuleReplacementPlugin(),
     new Webpack.NoEmitOnErrorsPlugin(),
     new Webpack.DefinePlugin({
@@ -47,6 +56,7 @@ export default {
       "process.env" : {
         NODE_ENV : JSON.stringify("development")
       }
-    })
+    }),
+    new Webpack.LoaderOptionsPlugin({ debug: true })
   ]
 };

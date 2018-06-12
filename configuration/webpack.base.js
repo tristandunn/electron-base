@@ -1,11 +1,13 @@
 import path from "path";
 
 export default {
+  mode : "development",
+
   module : {
-    loaders : [
+    rules : [
       {
+        use     : [{ loader: "babel-loader" }],
         test    : /\.jsx?$/,
-        loaders : ["babel-loader"],
         exclude : /node_modules/
       }
     ]
